@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nawy_real_state/config/theme/app_color.dart';
 
-/// The host scaffold that shows the bottom NavigationBar
+import '../../config/theme/app_text_style.dart';
+import '../../generated_files/assets.gen.dart';
+
 class NavScaffold extends StatefulWidget {
   final StatefulNavigationShell shell;
+
   const NavScaffold({super.key, required this.shell});
 
   @override
@@ -15,7 +19,6 @@ class _NavScaffoldState extends State<NavScaffold> {
 
   void _onTap(int i) {
     if (i == _index) {
-      // Re-tapping current tab pops to its root
       widget.shell.goBranch(i, initialLocation: true);
     } else {
       widget.shell.goBranch(i);
@@ -23,9 +26,10 @@ class _NavScaffoldState extends State<NavScaffold> {
   }
 
   String _titleFor(int i) => switch (i) {
-    0 => 'Home',
-    1 => 'Search',
-    _ => 'Profile',
+    0 => 'Explore',
+    1 => 'Updates',
+    3 => 'Favorites',
+    _ => 'More',
   };
 
   @override
@@ -33,24 +37,31 @@ class _NavScaffoldState extends State<NavScaffold> {
     return Scaffold(
       appBar: AppBar(title: Text(_titleFor(_index)), centerTitle: true),
       body: widget.shell, // <- IndexedStack of branches
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: _index,
-        onDestinationSelected: _onTap,
-        destinations: const [
-          NavigationDestination(
-            icon: Icon(Icons.home_outlined),
-            selectedIcon: Icon(Icons.home),
-            label: 'Home',
+      bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: AppColors.primaryColor,
+        unselectedItemColor: AppColors.mediumBlackColor,
+        showSelectedLabels: true,
+        selectedLabelStyle: TextStyles.light12MediumBlack(
+          context,
+        ).copyWith(color: AppColors.primaryColor),
+        unselectedLabelStyle: TextStyles.light12MediumBlack(context),
+
+        currentIndex: _index,
+        onTap: _onTap,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.category), label: 'Explore'),
+          BottomNavigationBarItem(
+            icon: Assets.icons.updates.svg(),
+
+            label: 'Updates',
           ),
-          NavigationDestination(
-            icon: Icon(Icons.search_outlined),
-            selectedIcon: Icon(Icons.search),
-            label: 'Search',
-          ),
-          NavigationDestination(
+          BottomNavigationBarItem(
             icon: Icon(Icons.person_outline),
-            selectedIcon: Icon(Icons.person),
-            label: 'Profile',
+            label: 'Favorite',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outline),
+            label: 'More',
           ),
         ],
       ),

@@ -2,7 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:nawy_real_state/config/routes/routes_transitions.dart';
 
 import '../../core/constant/nav_bar.dart';
-import '../../feature/home/home_screen.dart';
+import '../../feature/update/update_screen.dart';
 import 'const/route_paths.dart';
 
 class AppRoutes {
@@ -22,15 +22,15 @@ class AppRoutes {
         StatefulShellBranch(
           routes: [
             GoRoute(
-              path: RoutePaths.homeScreen,
+              path: RoutePaths.updateScreen,
               pageBuilder: (context, state) =>
-                  RouteTransitions.fade(context, state, HomeScreen()),
+                  RouteTransitions.fade(context, state, UpdatesScreen()),
               routes: [],
             ),
             GoRoute(
-              path: RoutePaths.searchScreen,
+              path: RoutePaths.exploreScreen,
               pageBuilder: (context, state) =>
-                  RouteTransitions.fade(context, state, HomeScreen()),
+                  RouteTransitions.fade(context, state, UpdatesScreen()),
               routes: [],
             ),
           ],

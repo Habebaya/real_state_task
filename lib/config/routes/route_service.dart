@@ -21,6 +21,6 @@ class RouteService {
   );
 
   static String? _handleRedirect(BuildContext context, GoRouterState state) {
-    return RoutePaths.homeScreen;
+    return RoutePaths.updateScreen;
   }
 }
