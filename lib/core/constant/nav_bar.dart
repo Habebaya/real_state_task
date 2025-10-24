@@ -49,20 +49,19 @@ class _NavScaffoldState extends State<NavScaffold> {
         currentIndex: _index,
         onTap: _onTap,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.category), label: 'Explore'),
+          BottomNavigationBarItem(
+            icon: Assets.icons.explore.svg(),
+            label: 'Explore',
+          ),
           BottomNavigationBarItem(
             icon: Assets.icons.updates.svg(),
-
             label: 'Updates',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
+            icon: Assets.icons.favorite.svg(),
             label: 'Favorite',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            label: 'More',
-          ),
+          BottomNavigationBarItem(icon: Assets.icons.more.svg(), label: 'More'),
         ],
       ),
     );
