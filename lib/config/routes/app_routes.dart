@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nawy_real_state/config/routes/routes_transitions.dart';
 
@@ -13,7 +14,6 @@ class AppRoutes {
   factory AppRoutes() => _instance;
 
   List<RouteBase> routes = [
-    /// Shell with an IndexedStack to preserve each tab's state
     StatefulShellRoute.indexedStack(
       builder: (context, state, navigationShell) {
         return NavScaffold(shell: navigationShell);
@@ -22,15 +22,39 @@ class AppRoutes {
         StatefulShellBranch(
           routes: [
             GoRoute(
-              path: RoutePaths.updateScreen,
+              path: RoutePaths.exploreScreen,
               pageBuilder: (context, state) =>
                   RouteTransitions.fade(context, state, UpdatesScreen()),
               routes: [],
             ),
+          ],
+        ),
+        StatefulShellBranch(
+          routes: [
             GoRoute(
-              path: RoutePaths.exploreScreen,
+              path: RoutePaths.updateScreen,
               pageBuilder: (context, state) =>
-                  RouteTransitions.fade(context, state, UpdatesScreen()),
+                  RouteTransitions.fade(context, state, Scaffold()),
+              routes: [],
+            ),
+          ],
+        ),
+        StatefulShellBranch(
+          routes: [
+            GoRoute(
+              path: RoutePaths.favoriteScreen,
+              pageBuilder: (context, state) =>
+                  RouteTransitions.fade(context, state, Scaffold()),
+              routes: [],
+            ),
+          ],
+        ),
+        StatefulShellBranch(
+          routes: [
+            GoRoute(
+              path: RoutePaths.moreScreen,
+              pageBuilder: (context, state) =>
+                  RouteTransitions.fade(context, state, Scaffold()),
               routes: [],
             ),
           ],

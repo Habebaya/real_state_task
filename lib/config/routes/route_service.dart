@@ -11,16 +11,10 @@ class RouteService {
       GlobalKey<NavigatorState>();
 
   static final GoRouter goRouter = GoRouter(
-    initialLocation: RoutePaths.splash,
+    initialLocation: RoutePaths.updateScreen,
     navigatorKey: rootNavigatorKey,
     debugLogDiagnostics: false,
     routes: AppRoutes().routes,
-
     observers: [],
-    redirect: _handleRedirect,
   );
-
-  static String? _handleRedirect(BuildContext context, GoRouterState state) {
-    return RoutePaths.updateScreen;
-  }
 }

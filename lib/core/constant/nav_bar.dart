@@ -39,8 +39,10 @@ class _NavScaffoldState extends State<NavScaffold> {
       body: widget.shell, // <- IndexedStack of branches
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: AppColors.primaryColor,
-        unselectedItemColor: AppColors.mediumBlackColor,
         showSelectedLabels: true,
+        iconSize: 18,
+        unselectedItemColor: AppColors.mediumBlackColor,
+        showUnselectedLabels: true,
         selectedLabelStyle: TextStyles.light12MediumBlack(
           context,
         ).copyWith(color: AppColors.primaryColor),
@@ -51,17 +53,45 @@ class _NavScaffoldState extends State<NavScaffold> {
         items: [
           BottomNavigationBarItem(
             icon: Assets.icons.explore.svg(),
+            activeIcon: Assets.icons.explore.svg(
+              colorFilter: ColorFilter.mode(
+                AppColors.primaryColor,
+                BlendMode.srcIn,
+              ),
+            ),
             label: 'Explore',
           ),
           BottomNavigationBarItem(
             icon: Assets.icons.updates.svg(),
+            activeIcon: Assets.icons.updates.svg(
+              colorFilter: ColorFilter.mode(
+                AppColors.primaryColor,
+                BlendMode.srcIn,
+              ),
+            ),
+
             label: 'Updates',
           ),
           BottomNavigationBarItem(
+            activeIcon: Assets.icons.favorite.svg(
+              colorFilter: ColorFilter.mode(
+                AppColors.primaryColor,
+                BlendMode.srcIn,
+              ),
+            ),
             icon: Assets.icons.favorite.svg(),
             label: 'Favorite',
           ),
-          BottomNavigationBarItem(icon: Assets.icons.more.svg(), label: 'More'),
+          BottomNavigationBarItem(
+            icon: Assets.icons.more.svg(),
+            activeIcon: Assets.icons.more.svg(
+              colorFilter: ColorFilter.mode(
+                AppColors.primaryColor,
+                BlendMode.srcIn,
+              ),
+            ),
+            label: 'More',
+          ),
         ],
       ),
     );
