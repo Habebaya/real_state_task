@@ -27,6 +27,12 @@ class AppRoutes {
                   RouteTransitions.fade(context, state, HomeScreen()),
               routes: [],
             ),
+            GoRoute(
+              path: RoutePaths.searchScreen,
+              pageBuilder: (context, state) =>
+                  RouteTransitions.fade(context, state, HomeScreen()),
+              routes: [],
+            ),
           ],
         ),
       ],
