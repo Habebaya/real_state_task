@@ -36,16 +36,25 @@ dependencies:
   logger: ^2.6.2
   go_router: ^15.1.2
   flutter_screenutil: ^5.9.3
+  dartz:
+  equatable:
+  flutter_bloc: ^9.1.1
+  get_it: ^8.0.3
+  shimmer:
+  intl: ^0.19.0
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
   
+
+
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   flutter_lints: ^5.0.0
-  flutter_gen_runner: ^5.10.0
-  build_runner: ^2.4.15
+  build_runner: 2.4.13
+  hive_generator: 2.0.1
 
 
 
@@ -57,9 +66,10 @@ flutter_gen:
   output: lib/generated_files/ # Optional (default: lib/gen/)
   line_length: 80 # Optional (default: 80)
   integrations:
-    flutter_svg: true # Enable SVG asset support
-    rive: true # Enable Rive animation support
-    lottie: true # Enable Lottie animation support
+    flutter_svg: true 
+    rive: true
+    lottie: true
+
 flutter:
 
 

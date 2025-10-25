@@ -19,9 +19,57 @@ class TextStyles {
 
   static TextStyle light12MediumBlack(BuildContext context) {
     return TextStyle(
+      fontFamily: cairoFontFamily,
       color: AppColors.mediumBlackColor,
       fontSize: 12.sp,
       fontWeight: lightFontWeight,
+    );
+  }
+
+  static TextStyle light12LightGray(BuildContext context) {
+    return TextStyle(
+      fontFamily: cairoFontFamily,
+      color: AppColors.lightGray,
+      fontSize: 12.sp,
+      fontWeight: lightFontWeight,
+    );
+  }
+
+  static TextStyle normal14MediumBlack(BuildContext context) {
+    return TextStyle(
+      fontFamily: cairoFontFamily,
+
+      color: AppColors.mediumBlackColor,
+      fontSize: 14.sp,
+      fontWeight: normalFontWeight,
+    );
+  }
+
+  static TextStyle normal13darkNavy(BuildContext context) {
+    return TextStyle(
+      fontFamily: cairoFontFamily,
+
+      color: AppColors.darkNavyColor,
+      fontSize: 13.sp,
+      fontWeight: lightFontWeight,
+    );
+  }
+
+  static TextStyle normal14darkGray(BuildContext context) {
+    return TextStyle(
+      fontFamily: cairoFontFamily,
+      color: AppColors.darkGray,
+      fontSize: 14.sp,
+      fontWeight: lightFontWeight,
+    );
+  }
+
+  static TextStyle bold16Primary(BuildContext context) {
+    return TextStyle(
+      fontFamily: cairoFontFamily,
+      color: AppColors.primaryColor,
+      fontSize: 18.sp,
+      fontWeight: boldFontWeight,
     );
   }
 }

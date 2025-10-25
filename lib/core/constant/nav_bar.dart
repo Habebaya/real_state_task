@@ -15,41 +15,36 @@ class NavScaffold extends StatefulWidget {
 }
 
 class _NavScaffoldState extends State<NavScaffold> {
-  int get _index => widget.shell.currentIndex;
-
-  void _onTap(int i) {
-    if (i == _index) {
-      widget.shell.goBranch(i, initialLocation: true);
-    } else {
-      widget.shell.goBranch(i);
-    }
+  void _onTap(int index) {
+    widget.shell.goBranch(
+      index,
+      initialLocation: index == widget.shell.currentIndex,
+    );
   }
-
-  String _titleFor(int i) => switch (i) {
-    0 => 'Explore',
-    1 => 'Updates',
-    3 => 'Favorites',
-    _ => 'More',
-  };
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(_titleFor(_index)), centerTitle: true),
+      backgroundColor: AppColors.scaffoldBackgroundColor,
       body: widget.shell, // <- IndexedStack of branches
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         selectedItemColor: AppColors.primaryColor,
         showSelectedLabels: true,
+
         iconSize: 18,
+        backgroundColor: AppColors.whiteColor,
         unselectedItemColor: AppColors.mediumBlackColor,
         showUnselectedLabels: true,
+
         selectedLabelStyle: TextStyles.light12MediumBlack(
           context,
         ).copyWith(color: AppColors.primaryColor),
         unselectedLabelStyle: TextStyles.light12MediumBlack(context),
 
-        currentIndex: _index,
+        currentIndex: widget.shell.currentIndex,
         onTap: _onTap,
+
         items: [
           BottomNavigationBarItem(
             icon: Assets.icons.explore.svg(),

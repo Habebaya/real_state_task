@@ -5,4 +5,5 @@ class RoutePaths {
 
   static const String favoriteScreen = '/favorite';
   static const String moreScreen = '/more';
+  static const String searchResultScreen = '/searchResult';
 }

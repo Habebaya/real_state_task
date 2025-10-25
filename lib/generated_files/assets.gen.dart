@@ -17,6 +17,15 @@ import 'package:vector_graphics/vector_graphics.dart' as _vg;
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/area.svg
+  SvgGenImage get area => const SvgGenImage('assets/icons/area.svg');
+
+  /// File path: assets/icons/bathroom.svg
+  SvgGenImage get bathroom => const SvgGenImage('assets/icons/bathroom.svg');
+
+  /// File path: assets/icons/bed.svg
+  SvgGenImage get bed => const SvgGenImage('assets/icons/bed.svg');
+
   /// File path: assets/icons/explore.svg
   SvgGenImage get explore => const SvgGenImage('assets/icons/explore.svg');
 
@@ -30,7 +39,15 @@ class $AssetsIconsGen {
   SvgGenImage get updates => const SvgGenImage('assets/icons/updates.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [explore, favorite, more, updates];
+  List<SvgGenImage> get values => [
+    area,
+    bathroom,
+    bed,
+    explore,
+    favorite,
+    more,
+    updates,
+  ];
 }
 
 class Assets {

@@ -24,11 +24,7 @@ class AppNavigator {
 
     switch (navigateType) {
       case NavigateType.pushNamed:
-        future = goRouter.pushNamed(
-          screenName,
-          queryParameters: params,
-          extra: extra,
-        );
+        future = goRouter.push(screenName, extra: extra);
         break;
 
       case NavigateType.goNamed:
@@ -36,11 +32,7 @@ class AppNavigator {
         return;
 
       case NavigateType.pushReplacementNamed:
-        future = goRouter.pushReplacementNamed(
-          screenName,
-          queryParameters: params,
-          extra: extra,
-        );
+        future = goRouter.pushReplacement(screenName, extra: extra);
         break;
     }
 
